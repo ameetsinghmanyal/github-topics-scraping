@@ -6,7 +6,7 @@
  The code is returning a list of topics from GitHub along with their descriptions and URLs. 
  It then scrapes the top repositories for each topic and saves the information in CSV files in a 'data' directory
  
- In this project we have used the ![Github Topics](https://github.com/topics) as our data    
+ In this project we have used the [**Github Topics**](https://github.com/topics) as our data    
  
 ### Install Packages
 ```
