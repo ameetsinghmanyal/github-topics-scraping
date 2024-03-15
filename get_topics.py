@@ -18,3 +18,11 @@ def get_topic_titles(doc):
     for tag in topic_title_tags:
         topic_titles.append(tag.text)
     return topic_titles
+
+def get_topic_descs(doc):
+    desc_selector = 'f5 color-fg-muted mb-0 mt-1'
+    topic_desc_tags = doc.find_all('p', {'class': desc_selector})
+    topic_descs = []
+    for tag in topic_desc_tags:
+        topic_descs.append(tag.text.strip())
+    return topic_descs
