@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import pandas as pd
 
 def get_topics_page():
     # Get status of the requested page from github.com
@@ -26,3 +27,11 @@ def get_topic_descs(doc):
     for tag in topic_desc_tags:
         topic_descs.append(tag.text.strip())
     return topic_descs
+
+def get_topic_urls(doc):
+    topic_link_tags = doc.find_all('a', {'class': 'no-underline flex-1 d-flex flex-column'})
+    topic_urls = []
+    base_url = 'https://github.com'
+    for tag in topic_link_tags:
+        topic_urls.append(base_url + tag['href'])
+    return topic_urls
